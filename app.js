@@ -32,8 +32,8 @@ const weeks = [
     githubUrl: "https://github.com/dennis-cuadros",
     files: [
       { name: "Manual de Instalación SQL",      path: "ARCH/SEMANA_1/Manual_de_Instalacion_SQL.pdf",    type: "PDF" },
-      { name: "Repositorios de Bases de Datos",  path: "ARCH/SEMANA_1/Repositorios_Bases_de_Datos.pdf",  type: "PDF" },
-      { name: "Guía para crear cuenta en GitHub",path: "ARCH/SEMANA_1/guia_cuenta_GitHub.pdf",            type: "PDF" }
+      { name: "Manual de subir Web a GitHub",  path: "ARCH/SEMANA_1/Subir_Web_GitHub.pdf",  type: "PDF" },
+      { name: "Guía para crear cuenta en GitHub",path: "ARCH/SEMANA_1/GUIA_GibHub.pdf",            type: "PDF" }
     ]
   },
   {
@@ -50,8 +50,12 @@ const weeks = [
         <li>Cardinalidades 1:1, 1:N y M:N.</li>
         <li>Uso de draw.io para diagramas profesionales.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros",
-    files: []
+    githubUrl: "https://github.com/DCS1801/BASE-DE-DATOS-II-.git",
+    files: [
+      { name: "Manual de Instalación SQL",      path: "ARCH/SEMANA_1/Manual_de_Instalacion_SQL.pdf",    type: "PDF" },
+      { name: "Manual de subir Web a GitHub",  path: "ARCH/SEMANA_2/Rep_BD.pdf",  type: "PDF" },
+      
+    ]
   },
   {
     num: 3, unit: 1,
