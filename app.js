@@ -4,18 +4,20 @@
 ================================================================ */
 
 /* ============================================================
-   1. DATOS DE LAS 16 SEMANAS
+   1. DATOS — 16 SEMANAS
    status: "done"    → Completado  (badge verde)
            "pending" → Por completar (badge ámbar)
 
-   pdfUrl: Ruta relativa al PDF desde index.html
-           Ejemplo: "SEMANA_1/Manual_de_Instalacion_SQL.pdf"
-           Si no hay PDF, deja la propiedad sin definir o en null.
+   files: Array de archivos PDF por semana.
+   Cada archivo: { name, path, type }
+   Ejemplo:
+     { name: "Manual de Instalación SQL", path: "SEMANA_1/Manual.pdf", type: "PDF" }
+   Si no hay archivos, dejar el array vacío: files: []
 ============================================================ */
 const weeks = [
   {
-    num: 1,
-    title: "Semana 1 - Introducción a Bases de Datos",
+    num: 1, unit: 1,
+    title: "Semana 1 — Introducción a Bases de Datos",
     desc:  "Conceptos fundamentales: definición de BD, tipos (relacional, NoSQL), rol del SGBD y primer modelado.",
     tags:  ["Conceptos BD", "Modelo ER", "SGBD"],
     status: "done",
@@ -28,12 +30,15 @@ const weeks = [
         <li>Instalación y configuración de MySQL / PostgreSQL.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    // ⚠️ Asegúrate de que el archivo exista en esa carpeta sin espacios en el nombre
-    pdfUrl: "ARCH/SEMANA_1/Manual_de_Instalacion_SQL.pdf"
+    files: [
+      { name: "Manual de Instalación SQL",      path: "ARCH/SEMANA_1/Manual_de_Instalacion_SQL.pdf",    type: "PDF" },
+      { name: "Repositorios de Bases de Datos",  path: "ARCH/SEMANA_1/Repositorios_Bases_de_Datos.pdf",  type: "PDF" },
+      { name: "Guía para crear cuenta en GitHub",path: "ARCH/SEMANA_1/guia_cuenta_GitHub.pdf",            type: "PDF" }
+    ]
   },
   {
-    num: 2,
-    title: "Modelo Entidad-Relación (ER)",
+    num: 2, unit: 1,
+    title: "Semana 2 — Modelo Entidad-Relación (ER)",
     desc:  "Diseño de diagramas ER: entidades, atributos, relaciones, cardinalidad y notación Chen vs. crow's foot.",
     tags:  ["Diagrama ER", "Cardinalidad", "Notación Chen"],
     status: "done",
@@ -46,11 +51,11 @@ const weeks = [
         <li>Uso de draw.io para diagramas profesionales.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 3,
-    title: "Modelo Relacional",
+    num: 3, unit: 1,
+    title: "Semana 3 — Modelo Relacional",
     desc:  "Transformación del modelo ER al relacional: tablas, claves primarias, foráneas e integridad referencial.",
     tags:  ["Tablas", "Primary Key", "Foreign Key"],
     status: "done",
@@ -63,11 +68,11 @@ const weeks = [
         <li>Integridad referencial y acciones ON DELETE.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 4,
-    title: "SQL: DDL – Creación de Esquemas",
+    num: 4, unit: 1,
+    title: "Semana 4 — SQL: DDL · Creación de Esquemas",
     desc:  "Lenguaje de Definición de Datos: CREATE, ALTER y DROP. Creación de la base del proyecto integrador.",
     tags:  ["SQL", "DDL", "CREATE TABLE", "ALTER"],
     status: "done",
@@ -80,12 +85,12 @@ const weeks = [
         <li>Documentación del esquema con comentarios SQL.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 5,
-    title: "SQL: DML – Manipulación de Datos",
-    desc:  "INSERT, UPDATE y DELETE. Transacciones y control de errores básico con ROLLBACK / COMMIT.",
+    num: 5, unit: 2,
+    title: "Semana 5 — SQL: DML · Manipulación de Datos",
+    desc:  "INSERT, UPDATE y DELETE. Transacciones y control de errores con ROLLBACK / COMMIT.",
     tags:  ["DML", "INSERT", "UPDATE", "DELETE"],
     status: "done",
     details: `
@@ -97,11 +102,11 @@ const weeks = [
         <li>Transacciones: BEGIN, COMMIT, ROLLBACK.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 6,
-    title: "SQL: Consultas SELECT Básicas",
+    num: 6, unit: 2,
+    title: "Semana 6 — SQL: Consultas SELECT Básicas",
     desc:  "Consultas fundamentales: WHERE, ORDER BY, GROUP BY, HAVING, LIMIT y operadores lógicos.",
     tags:  ["SELECT", "WHERE", "ORDER BY", "GROUP BY"],
     status: "done",
@@ -114,12 +119,12 @@ const weeks = [
         <li>Subconsultas escalares en el WHERE.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 7,
-    title: "JOINs y Subconsultas Avanzadas",
-    desc:  "INNER, LEFT, RIGHT y FULL OUTER JOIN. Subconsultas correlacionadas y análisis de planes de ejecución.",
+    num: 7, unit: 2,
+    title: "Semana 7 — JOINs y Subconsultas Avanzadas",
+    desc:  "INNER, LEFT, RIGHT y FULL OUTER JOIN. Subconsultas correlacionadas y planes de ejecución.",
     tags:  ["JOIN", "Subconsultas", "EXPLAIN"],
     status: "done",
     details: `
@@ -131,11 +136,11 @@ const weeks = [
         <li>Uso de EXPLAIN para optimizar consultas lentas.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 8,
-    title: "Normalización (1FN, 2FN, 3FN)",
+    num: 8, unit: 2,
+    title: "Semana 8 — Normalización (1FN, 2FN, 3FN)",
     desc:  "Formas normales para eliminar redundancias y anomalías. Aplicación al esquema del proyecto integrador.",
     tags:  ["Normalización", "1FN", "2FN", "3FN"],
     status: "done",
@@ -148,12 +153,12 @@ const weeks = [
         <li>Verificación con herramientas de diagrama ER.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 9,
-    title: "Vistas, Índices y Procedimientos",
-    desc:  "Creación de VIEWS para abstracción, INDEX para rendimiento y primeros STORED PROCEDURES en PL/SQL.",
+    num: 9, unit: 3,
+    title: "Semana 9 — Vistas, Índices y Procedimientos",
+    desc:  "Creación de VIEWS para abstracción, INDEX para rendimiento y primeros STORED PROCEDURES.",
     tags:  ["VIEW", "INDEX", "Stored Procedure"],
     status: "done",
     details: `
@@ -165,11 +170,11 @@ const weeks = [
         <li>Ventajas de encapsular lógica en el servidor.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 10,
-    title: "Funciones y Triggers",
+    num: 10, unit: 3,
+    title: "Semana 10 — Funciones y Triggers",
     desc:  "Funciones definidas por el usuario (UDF) y disparadores TRIGGER para automatizar lógica de negocio.",
     tags:  ["FUNCTION", "TRIGGER", "Automatización"],
     status: "done",
@@ -182,12 +187,12 @@ const weeks = [
         <li>Pruebas de triggers con escenarios reales.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 11,
-    title: "Transacciones y Concurrencia",
-    desc:  "Propiedades ACID, niveles de aislamiento, bloqueos (locks) y manejo de deadlocks en entornos concurrentes.",
+    num: 11, unit: 3,
+    title: "Semana 11 — Transacciones y Concurrencia",
+    desc:  "Propiedades ACID, niveles de aislamiento, bloqueos y manejo de deadlocks en entornos concurrentes.",
     tags:  ["ACID", "Transacciones", "Locks", "Deadlock"],
     status: "pending",
     details: `
@@ -199,11 +204,11 @@ const weeks = [
         <li>Ejercicios con sesiones concurrentes en MySQL.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 12,
-    title: "Seguridad y Gestión de Privilegios",
+    num: 12, unit: 3,
+    title: "Semana 12 — Seguridad y Gestión de Privilegios",
     desc:  "Gestión de usuarios, roles, GRANT/REVOKE y mejores prácticas de seguridad en bases de datos.",
     tags:  ["Seguridad", "GRANT", "REVOKE", "Roles"],
     status: "pending",
@@ -216,11 +221,11 @@ const weeks = [
         <li>Principio de mínimo privilegio aplicado al proyecto.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 13,
-    title: "Backup, Restore y Replicación",
+    num: 13, unit: 4,
+    title: "Semana 13 — Backup, Restore y Replicación",
     desc:  "Estrategias de respaldo: mysqldump, pg_dump, backups lógicos vs físicos. Introducción a la replicación.",
     tags:  ["Backup", "Restore", "Replicación"],
     status: "pending",
@@ -233,12 +238,12 @@ const weeks = [
         <li>Políticas de retención de respaldos.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 14,
-    title: "NoSQL – Introducción a MongoDB",
-    desc:  "Bases de datos no relacionales: documentos BSON, colecciones, CRUD en MongoDB y comparativa con SQL.",
+    num: 14, unit: 4,
+    title: "Semana 14 — NoSQL · Introducción a MongoDB",
+    desc:  "Bases de datos no relacionales: documentos BSON, colecciones, CRUD en MongoDB y comparativa SQL.",
     tags:  ["NoSQL", "MongoDB", "BSON", "CRUD"],
     status: "pending",
     details: `
@@ -250,11 +255,11 @@ const weeks = [
         <li>Modelado de documentos embebidos y referenciados.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 15,
-    title: "Proyecto Integrador – Desarrollo",
+    num: 15, unit: 4,
+    title: "Semana 15 — Proyecto Integrador · Desarrollo",
     desc:  "Implementación completa: diseño ER → esquema relacional → normalización → scripts SQL → consultas avanzadas.",
     tags:  ["Proyecto Final", "Integración", "SQL Avanzado"],
     status: "pending",
@@ -267,11 +272,11 @@ const weeks = [
         <li>Informe técnico en PDF con capturas de evidencia.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   },
   {
-    num: 16,
-    title: "Exposición Final y Evaluación",
+    num: 16, unit: 4,
+    title: "Semana 16 — Exposición Final y Evaluación",
     desc:  "Presentación del proyecto integrador ante el docente: demo en vivo, sustentación y reflexión del ciclo.",
     tags:  ["Exposición", "Demo en Vivo", "Evaluación Final"],
     status: "pending",
@@ -284,67 +289,161 @@ const weeks = [
         <li>Documentación técnica completa y repositorio publicado.</li>
       </ul>`,
     githubUrl: "https://github.com/dennis-cuadros",
-    pdfUrl: null
+    files: []
   }
 ];
 
 /* ============================================================
-   2. RENDER DE TARJETAS
+   2. CONFIGURACIÓN DE UNIDADES
 ============================================================ */
+const unitConfig = {
+  1: { label: "Unidad 1", name: "Fundamentos y Modelado" },
+  2: { label: "Unidad 2", name: "SQL y Normalización" },
+  3: { label: "Unidad 3", name: "Objetos Avanzados y Administración" },
+  4: { label: "Unidad 4", name: "Proyecto Integrador y NoSQL" }
+};
 
-function statusLabel(s) {
-  if (s === 'done') return { cls: 'status-done',    txt: '✓ Completado'    };
-  return                   { cls: 'status-pending', txt: '○ Por completar' };
+/* ============================================================
+   3. ÍCONOS SVG REUTILIZABLES
+============================================================ */
+const icons = {
+  db: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+  </svg>`,
+  calendar: `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <rect x="3" y="4" width="18" height="18" rx="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+  </svg>`,
+  arrow: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M5 12h14M12 5l7 7-7 7"/>
+  </svg>`,
+  file: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+  </svg>`,
+  eye: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+    <circle cx="12" cy="12" r="3"/>
+  </svg>`,
+  download: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>`,
+  check: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>`,
+  clock: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="12 6 12 12 16 14"/>
+  </svg>`
+};
+
+/* ============================================================
+   4. RENDER DE UNIDADES Y TARJETAS
+============================================================ */
+function statusInfo(s) {
+  if (s === 'done') return { cls: 'status-done',    dot: 'status-dot status-done',    txt: '✓ Completado' };
+  return                   { cls: 'status-pending', dot: 'status-dot status-pending', txt: '○ Por completar' };
 }
 
-function renderWeeks() {
-  const grid = document.getElementById('weeks-grid');
-  grid.innerHTML = '';
+function renderUnits() {
+  const container = document.getElementById('units-container');
+  const unitIds   = [...new Set(weeks.map(w => w.unit))];
 
-  weeks.forEach((w, idx) => {
-    const st      = statusLabel(w.status);
-    const tagsHTML = w.tags.map(t => `<span class="tag">${t}</span>`).join('');
-    const delay    = `${idx * 45}ms`;
+  unitIds.forEach(uid => {
+    const unitWeeks = weeks.filter(w => w.unit === uid);
+    const cfg       = unitConfig[uid];
 
-    const card = document.createElement('article');
-    card.className = 'week-card';
-    card.setAttribute('role', 'listitem');
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('aria-label', `Semana ${w.num}: ${w.title}`);
-    card.style.animationDelay = delay;
+    const section = document.createElement('section');
+    section.className = 'unit-section';
+    section.setAttribute('aria-label', `${cfg.label}: ${cfg.name}`);
 
-    card.innerHTML = `
-      <span class="week-num-bg" aria-hidden="true">${String(w.num).padStart(2,'0')}</span>
-      <div class="card-top">
-        <div class="card-code-icon" aria-hidden="true">&lt;/&gt;</div>
-        <div class="week-chip">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-          Semana ${w.num}
+    section.innerHTML = `
+      <div class="unit-header">
+        <span class="unit-badge">${cfg.label}</span>
+        <span class="unit-name">${cfg.name}</span>
+        <span class="unit-count">${unitWeeks.length} semanas</span>
+      </div>
+      <div class="weeks-grid" id="unit-${uid}-grid" role="list"></div>`;
+
+    container.appendChild(section);
+
+    const grid = section.querySelector(`#unit-${uid}-grid`);
+    unitWeeks.forEach((w, idx) => renderCard(w, idx, grid));
+  });
+}
+
+function renderCard(w, idx, grid) {
+  const st         = statusInfo(w.status);
+  const filesCount = w.files ? w.files.length : 0;
+
+  const card = document.createElement('article');
+  card.className   = 'week-card';
+  card.tabIndex    = 0;
+  card.setAttribute('role', 'listitem');
+  card.setAttribute('aria-label', `Semana ${w.num}: ${w.title}`);
+  card.style.animationDelay = `${idx * 55}ms`;
+
+  card.innerHTML = `
+    <div class="card-stripe"></div>
+    <span class="card-num-bg" aria-hidden="true">${String(w.num).padStart(2,'0')}</span>
+
+    <div class="card-body">
+      <!-- Fila superior -->
+      <div class="card-top-row">
+        <span class="card-week-pill">
+          ${icons.calendar}
+          Semana ${String(w.num).padStart(2,'0')}
+        </span>
+        <div class="card-db-badge" title="Base de Datos" aria-hidden="true">
+          ${icons.db}
         </div>
       </div>
-      <h3 class="week-title">${w.title}</h3>
-      <p  class="week-desc">${w.desc}</p>
-      <div class="week-tags">${tagsHTML}</div>
-      <div class="week-status">
-        <span class="status-dot ${st.cls}"></span>
+
+      <!-- Título -->
+      <h3 class="card-title">${w.title}</h3>
+
+      <!-- Descripción -->
+      <p class="card-desc">${w.desc}</p>
+
+      <!-- Tags -->
+      <div class="card-tags" aria-label="Tecnologías">
+        ${w.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+    <!-- Footer -->
+    <div class="card-footer">
+      <div class="card-status">
+        <span class="${st.dot}"></span>
         <span class="${st.cls}">${st.txt}</span>
-      </div>`;
+      </div>
+      <div style="display:flex;align-items:center;gap:.5rem;">
+        <span class="card-files-count">
+          ${icons.file}
+          ${filesCount} archivo${filesCount !== 1 ? 's' : ''}
+        </span>
+        <span class="card-arrow" aria-hidden="true">${icons.arrow}</span>
+      </div>
+    </div>`;
 
-    card.addEventListener('click', () => openModal(w));
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(w); }
-    });
-
-    grid.appendChild(card);
+  card.addEventListener('click',   ()  => openPanel(w));
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPanel(w); }
   });
 
-  lucide.createIcons();
+  grid.appendChild(card);
 }
 
+/* ============================================================
+   5. BARRA DE PROGRESO
+============================================================ */
 function animateProgress() {
   const done  = weeks.filter(w => w.status === 'done').length;
   const total = weeks.length;
@@ -354,71 +453,99 @@ function animateProgress() {
   document.getElementById('progress-pct').textContent   = `${pct}%`;
 
   setTimeout(() => {
-    document.querySelector('.progress-fill').style.width = `${pct}%`;
-  }, 250);
+    document.getElementById('progress-fill').style.width = `${pct}%`;
+  }, 400);
 }
 
 /* ============================================================
-   3. MODAL  —  CORRECCIÓN DEL PDF
+   6. PANEL DE ARCHIVOS
 ============================================================ */
+function openPanel(w) {
+  const st = statusInfo(w.status);
 
-function openModal(w) {
-  const st = statusLabel(w.status);
+  /* Chip y título */
+  document.getElementById('panel-chip').textContent  = `Semana ${w.num}`;
+  document.getElementById('panel-title').textContent = w.title;
 
-  document.getElementById('modal-chip').textContent  = `Semana ${w.num}`;
-  document.getElementById('modal-title').textContent = w.title;
-  document.getElementById('modal-body').innerHTML    = w.details;
-  document.getElementById('modal-tags').innerHTML    =
+  /* Estado */
+  const statusEl = document.getElementById('panel-status');
+  statusEl.className = `panel-status ${w.status}`;
+  statusEl.innerHTML = w.status === 'done'
+    ? `${icons.check} Completado`
+    : `${icons.clock} Por completar`;
+
+  /* Tags */
+  document.getElementById('panel-tags').innerHTML =
     w.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
-  // Botón GitHub
-  document.getElementById('modal-github').setAttribute('href', w.githubUrl);
+  /* Detalles */
+  document.getElementById('panel-details').innerHTML = w.details;
 
-  // ─── BOTÓN PDF CORREGIDO ───────────────────────────────────
-  const pdfBtn = document.getElementById('modal-pdf');
-  if (w.pdfUrl && w.pdfUrl !== null) {
-    pdfBtn.setAttribute('href', w.pdfUrl);   // ← setAttribute en lugar de .href
-    pdfBtn.style.display = 'flex';
+  /* GitHub */
+  document.getElementById('panel-github').setAttribute('href', w.githubUrl);
+
+  /* Archivos */
+  const filesList = document.getElementById('panel-files');
+  filesList.innerHTML = '';
+
+  if (w.files && w.files.length > 0) {
+    w.files.forEach(f => {
+      const fileName = f.name;
+      const row = document.createElement('div');
+      row.className = 'file-row';
+      row.innerHTML = `
+        <div class="file-icon">${f.type}</div>
+        <div class="file-info">
+          <div class="file-name">${fileName}</div>
+          <div class="file-meta">${f.path}</div>
+        </div>
+        <div class="file-actions">
+          <a href="${f.path}" target="_blank" rel="noopener noreferrer"
+             class="btn-view" aria-label="Ver ${fileName}">
+            ${icons.eye} Ver
+          </a>
+          <a href="${f.path}" download="${fileName}"
+             class="btn-dl" aria-label="Descargar ${fileName}">
+            ${icons.download} Descargar
+          </a>
+        </div>`;
+      filesList.appendChild(row);
+    });
   } else {
-    pdfBtn.setAttribute('href', '#');
-    pdfBtn.style.display = 'none';
+    filesList.innerHTML = `
+      <div class="no-files">
+        📂 No hay archivos disponibles para esta semana aún.
+      </div>`;
   }
-  // ──────────────────────────────────────────────────────────
 
-  // Pastilla de estado
-  const statusEl = document.getElementById('modal-status');
-  statusEl.className = `modal-status ${w.status}`;
-  statusEl.innerHTML = w.status === 'done'
-    ? `<i data-lucide="check-circle" style="width:13px;height:13px"></i> Completado`
-    : `<i data-lucide="clock" style="width:13px;height:13px"></i> Por completar`;
-
-  document.getElementById('modal-overlay').classList.add('open');
+  /* Abrir panel */
+  document.getElementById('files-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
-  lucide.createIcons();
 }
 
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
+function closePanel() {
+  document.getElementById('files-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
 
-function closeModalOnBg(e) {
-  if (e.target.id === 'modal-overlay') closeModal();
+function closePanelOnBg(e) {
+  if (e.target.id === 'files-overlay') closePanel();
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') closePanel();
 });
 
 /* ============================================================
-   4. CANVAS ANIMADO
+   7. CANVAS ANIMADO (partículas rojas)
 ============================================================ */
 function initCanvas() {
   const canvas = document.getElementById('bg-canvas');
-  const ctx    = canvas.getContext('2d');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
   let W, H;
+  const COUNT     = 60;
   const particles = [];
-  const COUNT = 60;
 
   function resize() {
     W = canvas.width  = window.innerWidth;
@@ -431,59 +558,66 @@ function initCanvas() {
     particles.push({
       x:  Math.random() * 1920,
       y:  Math.random() * 1080,
-      r:  Math.random() * 1.6 + 0.4,
-      dx: (Math.random() - 0.5) * 0.36,
-      dy: (Math.random() - 0.5) * 0.36,
-      a:  Math.random() * 0.5 + 0.12
+      r:  Math.random() * 1.5 + 0.3,
+      dx: (Math.random() - 0.5) * 0.32,
+      dy: (Math.random() - 0.5) * 0.32,
+      a:  Math.random() * 0.35 + 0.07
     });
   }
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
-    ctx.strokeStyle = 'rgba(0,212,255,0.024)';
+    /* Cuadrícula sutil */
+    ctx.strokeStyle = 'rgba(180,0,0,0.018)';
     ctx.lineWidth   = 1;
-    const step = 65;
-    for (let x = 0; x < W; x += step) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
-    for (let y = 0; y < H; y += step) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    const step = 72;
+    for (let x = 0; x < W; x += step) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (let y = 0; y < H; y += step) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
 
+    /* Partículas */
     particles.forEach(p => {
       p.x += p.dx; p.y += p.dy;
       if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
       if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,212,255,${p.a})`;
+      ctx.fillStyle = `rgba(210,30,30,${p.a})`;
       ctx.fill();
     });
 
-    const MAX = 130;
+    /* Líneas de conexión */
+    const MAX = 125;
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
-        const d  = Math.sqrt(dx*dx + dy*dy);
+        const d  = Math.sqrt(dx * dx + dy * dy);
         if (d < MAX) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0,102,255,${0.09*(1-d/MAX)})`;
-          ctx.lineWidth   = 0.7;
+          ctx.strokeStyle = `rgba(180,0,0,${0.08 * (1 - d / MAX)})`;
+          ctx.lineWidth   = 0.65;
           ctx.stroke();
         }
       }
     }
+
     requestAnimationFrame(draw);
   }
   draw();
 }
 
 /* ============================================================
-   5. INICIALIZACIÓN
+   8. INICIALIZACIÓN
 ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  lucide.createIcons();
   initCanvas();
-  renderWeeks();
+  renderUnits();
   animateProgress();
 });

@@ -3,203 +3,238 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio · Dennis Cuadros · Base de Datos</title>
+  <title>Portafolio · Dennis Cuadros · Base de Datos II</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 
   <!-- Hoja de estilos -->
   <link rel="stylesheet" href="style.css"/>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
 
-<canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <!-- CANVAS DE FONDO -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-<!-- NAVBAR -->
-<nav role="navigation" aria-label="Navegación principal">
-  <a href="#hero" class="nav-brand" aria-label="Inicio">
-    <span class="nav-code-tag" aria-hidden="true">&lt;/&gt;</span>
-    Dennis Cuadros
-  </a>
-  <ul class="nav-links" role="list">
-    <li><a href="#hero">Inicio</a></li>
-    <li><a href="#about">Sobre mí</a></li>
-    <li><a href="#projects">Proyectos</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<header id="hero" role="banner">
-  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
-  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
-
-  <div class="hero-badge">
-    <span class="badge-dot" aria-hidden="true"></span>
-    Ciclo Académico 2025 · Base de Datos
-  </div>
-
-  <div class="hero-avatar" aria-hidden="true">DC</div>
-
-  <p class="hero-label">Portafolio de</p>
-  <h1 class="hero-title">Dennis Cuadros<br/>Sotomayor</h1>
-  <p class="hero-career">Ingeniería de Sistemas y Computación</p>
-  <p class="hero-uni">Universidad Peruana Los Andes</p>
-  <span class="hero-chip">Curso: Base de Datos</span>
-
-  <div class="hero-about" id="about" aria-label="Sobre Dennis Cuadros Sotomayor">
-    <div class="about-label">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-        <circle cx="12" cy="7" r="4"/>
-      </svg>
-      Sobre mí
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Navegación principal">
+    <a href="#hero" class="nav-brand" aria-label="Inicio">
+      <span class="nav-tag" aria-hidden="true">&lt;/&gt;</span>
+      Dennis Cuadros
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="nav-dot"></span>
+      <span class="nav-status-text">BD 2026</span>
     </div>
-    <p>
-      Soy <strong>Dennis Cuadros Sotomayor</strong>, estudiante de
-      <strong>Ingeniería de Sistemas y Computación</strong> en la Universidad
-      Peruana Los Andes. Me apasiona el diseño y la gestión eficiente de sistemas
-      de información, con especial interés en bases de datos, desarrollo de software
-      y soluciones tecnológicas con impacto real.
-    </p>
-    <p>
-      Este portafolio reúne los proyectos desarrollados a lo largo del curso de
-      <strong>Base de Datos</strong>, donde apliqué desde modelado entidad-relación
-      hasta normalización, SQL avanzado, procedimientos almacenados, seguridad y
-      administración de motores relacionales y NoSQL.
-    </p>
-  </div>
-
-  <div class="hero-shortcuts" role="navigation" aria-label="Redes sociales y contacto">
-    <a href="https://github.com/dennis-cuadros"
-       target="_blank" rel="noopener noreferrer"
-       class="shortcut-btn github" aria-label="Ver perfil en GitHub">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18
-                 6.839 9.504.5.092.682-.217.682-.483
-                 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343
-                 -.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608
-                 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088
-                 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113
-                 -4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446
-                 -1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112
-                 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027
-                 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595
-                 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92
-                 .678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688
-                 .482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-      </svg>
-      GitHub
-    </a>
-
-    <a href="https://www.linkedin.com/in/dennis-cuadros"
-       target="_blank" rel="noopener noreferrer"
-       class="shortcut-btn linkedin" aria-label="Ver perfil en LinkedIn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852
-                 -3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414
-                 v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267
-                 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926
-                 -2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925
-                 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555
-                 V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542
-                 C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24
-                 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-      </svg>
-      LinkedIn
-    </a>
-
-    <a href="mailto:dennis.cuadros@upla.edu.pe"
-       class="shortcut-btn email" aria-label="Enviar correo electrónico">
-      <i data-lucide="mail" style="width:18px;height:18px"></i>
-      Email
-    </a>
-  </div>
-</header>
-
-<!-- PROYECTOS -->
-<main id="projects" aria-label="Proyectos por semana">
-  <div class="section-header">
-    <p class="section-tag">Actividades del ciclo académico</p>
-    <h2 class="section-title">Proyectos Semanales</h2>
-    <p class="section-desc">
-      16 semanas de aprendizaje en Base de Datos: desde fundamentos de modelado
-      hasta administración avanzada. Haz clic en cualquier semana para ver el detalle.
-    </p>
-    <div class="progress-bar-wrap" aria-label="Progreso del curso">
-      <div class="progress-label">
-        <span id="progress-count">Cargando…</span>
-        <span id="progress-pct">–</span>
-      </div>
-      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-fill"></div>
-      </div>
-    </div>
-  </div>
-  <div class="weeks-grid" id="weeks-grid" role="list" aria-label="Listado de semanas por proyecto"></div>
-</main>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <p>
-    <strong>Dennis Cuadros Sotomayor</strong> &nbsp;·&nbsp;
-    Ingeniería de Sistemas y Computación<br/>
-    Universidad Peruana Los Andes &nbsp;·&nbsp; Base de Datos &nbsp;·&nbsp; © 2025
-  </p>
-  <nav class="footer-links" aria-label="Redes sociales">
-    <a href="https://github.com/dennis-cuadros" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-      <i data-lucide="github" style="width:20px;height:20px"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/dennis-cuadros" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <i data-lucide="linkedin" style="width:20px;height:20px"></i>
-    </a>
-    <a href="mailto:dennis.cuadros@upla.edu.pe" aria-label="Email">
-      <i data-lucide="mail" style="width:20px;height:20px"></i>
-    </a>
   </nav>
-</footer>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modal-overlay"
-     role="dialog" aria-modal="true" aria-labelledby="modal-title"
-     onclick="closeModalOnBg(event)">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">
-      <i data-lucide="x" style="width:18px;height:18px"></i>
-    </button>
-    <div class="modal-header">
-      <div class="modal-code-icon" aria-hidden="true">&lt;/&gt;</div>
-      <div class="modal-header-text">
-        <span class="modal-week-chip" id="modal-chip"></span>
-        <h2 class="modal-title" id="modal-title"></h2>
-      </div>
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <header id="hero" role="banner">
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+
+    <!-- Badge -->
+    <div class="hero-badge">
+      <span class="badge-dot" aria-hidden="true"></span>
+      Ciclo Académico 2026 · Base de Datos II
     </div>
-    <div class="modal-status" id="modal-status"></div>
-    <div class="modal-body" id="modal-body"></div>
-    <div class="modal-tags" id="modal-tags"></div>
-    <div class="modal-actions">
-      <a href="#" id="modal-github" target="_blank" rel="noopener noreferrer"
-         class="modal-btn primary" aria-label="Ver repositorio en GitHub">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">
+
+    <!-- Avatar -->
+    <div class="hero-avatar" aria-hidden="true">
+      <span class="avatar-letters">DC</span>
+      <div class="avatar-ring"></div>
+    </div>
+
+    <p class="hero-label">Portafolio de</p>
+    <h1 class="hero-title">
+      <span class="title-line">Dennis Cuadros</span>
+      <span class="title-line title-accent">Sotomayor</span>
+    </h1>
+    <p class="hero-career">Ingeniería de Sistemas y Computación</p>
+    <p class="hero-uni">Universidad Peruana Los Andes</p>
+    <span class="hero-chip">
+      <span class="chip-dot"></span>
+      Curso: Base de Datos
+    </span>
+
+    <!-- ABOUT -->
+    <div class="hero-about" id="about" aria-label="Sobre Dennis Cuadros Sotomayor">
+      <div class="about-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        Sobre mí
+      </div>
+      <p>
+        Soy <strong>Dennis Cuadros Sotomayor</strong>, estudiante de
+        <strong>Ingeniería de Sistemas y Computación</strong> en la Universidad
+        Peruana Los Andes. Me apasiona el diseño y la gestión eficiente de sistemas
+        de información, con especial interés en bases de datos, desarrollo de software
+        y soluciones tecnológicas con impacto real.
+      </p>
+      <p>
+        Este portafolio reúne los proyectos desarrollados a lo largo del curso de
+        <strong>Base de Datos</strong>, donde apliqué desde modelado entidad-relación
+        hasta normalización, SQL avanzado, procedimientos almacenados y administración NoSQL.
+      </p>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="hero-shortcuts" role="navigation" aria-label="Redes sociales y contacto">
+      <a href="https://github.com/dennis-cuadros" target="_blank" rel="noopener noreferrer"
+         class="shortcut-btn github" aria-label="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
         </svg>
         GitHub
       </a>
-      <a href="#" id="modal-pdf" target="_blank" rel="noopener noreferrer"
-         class="modal-btn outline" aria-label="Abrir manual de la semana" style="display:none;">
-        <i data-lucide="file-text" style="width:15px;height:15px;margin-right:8px;"></i>
-        Ver Manual PDF
+      <a href="https://www.linkedin.com/in/dennis-cuadros" target="_blank" rel="noopener noreferrer"
+         class="shortcut-btn linkedin" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
       </a>
-      <button class="modal-btn outline" onclick="closeModal()">Cerrar</button>
+      <a href="mailto:dennis.cuadros@upla.edu.pe" class="shortcut-btn email" aria-label="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        Email
+      </a>
+    </div>
+  </header>
+
+  <!-- ═══════════════ PROYECTOS ═══════════════ -->
+  <main id="projects" aria-label="Proyectos por semana">
+    <div class="section-header">
+      <p class="section-tag">
+        <span class="section-tag-line"></span>
+        Actividades del ciclo académico
+        <span class="section-tag-line"></span>
+      </p>
+      <h2 class="section-title">Proyectos Semanales</h2>
+      <p class="section-desc">
+        16 semanas de aprendizaje en Base de Datos: desde fundamentos de modelado
+        hasta administración avanzada. Haz clic en cualquier semana para ver los archivos.
+      </p>
+
+      <!-- BARRA DE PROGRESO -->
+      <div class="progress-wrap" aria-label="Progreso del curso">
+        <div class="progress-header">
+          <span class="progress-label-txt" id="progress-count">Cargando…</span>
+          <span class="progress-pct-txt" id="progress-pct">–</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-fill" id="progress-fill"></div>
+          <div class="progress-glow" id="progress-glow"></div>
+        </div>
+        <div class="progress-milestones">
+          <span>25%</span><span>50%</span><span>75%</span><span>100%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNIDADES -->
+    <div id="units-container"></div>
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="nav-tag">&lt;/&gt;</span>
+        Dennis Cuadros Sotomayor
+      </div>
+      <p class="footer-info">
+        Ingeniería de Sistemas y Computación &nbsp;·&nbsp;
+        Universidad Peruana Los Andes &nbsp;·&nbsp; Base de Datos &nbsp;·&nbsp; © 2025
+      </p>
+      <nav class="footer-links" aria-label="Redes sociales">
+        <a href="https://github.com/dennis-cuadros" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/dennis-cuadros" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:dennis.cuadros@upla.edu.pe">Email</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ PANEL DE ARCHIVOS (MODAL) ═══════════════ -->
+  <div class="files-overlay" id="files-overlay"
+       role="dialog" aria-modal="true" aria-labelledby="panel-title"
+       onclick="closePanelOnBg(event)">
+    <div class="files-box" id="files-box">
+
+      <!-- Cabecera del panel -->
+      <div class="panel-header">
+        <div class="panel-header-left">
+          <div class="panel-db-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+          </div>
+          <div>
+            <span class="panel-week-chip" id="panel-chip">Semana 1</span>
+            <h2 class="panel-title" id="panel-title">Título</h2>
+          </div>
+        </div>
+        <button class="panel-close" onclick="closePanel()" aria-label="Cerrar panel">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Estado -->
+      <div class="panel-status-wrap">
+        <div class="panel-status" id="panel-status"></div>
+        <div class="panel-tags" id="panel-tags"></div>
+      </div>
+
+      <!-- Detalles -->
+      <div class="panel-details" id="panel-details"></div>
+
+      <!-- Archivos -->
+      <div class="panel-files-section">
+        <div class="panel-files-label">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+          Archivos de la semana
+        </div>
+        <div class="files-list" id="panel-files"></div>
+      </div>
+
+      <!-- Acciones -->
+      <div class="panel-actions">
+        <a href="#" id="panel-github" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          Ir al repositorio
+        </a>
+        <button class="btn-outline" onclick="closePanel()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Atrás
+        </button>
+      </div>
+
     </div>
   </div>
-</div>
 
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
