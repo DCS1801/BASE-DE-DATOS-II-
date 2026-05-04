@@ -7,12 +7,15 @@
    1. DATOS DE LAS 16 SEMANAS
    status: "done"    → Completado  (badge verde)
            "pending" → Por completar (badge ámbar)
-   Cambia githubUrl a tu repositorio real de cada semana.
+
+   pdfUrl: Ruta relativa al PDF desde index.html
+           Ejemplo: "SEMANA_1/Manual_de_Instalacion_SQL.pdf"
+           Si no hay PDF, deja la propiedad sin definir o en null.
 ============================================================ */
 const weeks = [
   {
     num: 1,
-    title: "Introducción a las Bases de Datos",
+    title: "Semana 1 - Introducción a Bases de Datos",
     desc:  "Conceptos fundamentales: definición de BD, tipos (relacional, NoSQL), rol del SGBD y primer modelado.",
     tags:  ["Conceptos BD", "Modelo ER", "SGBD"],
     status: "done",
@@ -24,7 +27,9 @@ const weeks = [
         <li>Introducción al modelo Entidad-Relación (ER).</li>
         <li>Instalación y configuración de MySQL / PostgreSQL.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    // ⚠️ Asegúrate de que el archivo exista en esa carpeta sin espacios en el nombre
+    pdfUrl: "ARCH/SEMANA_1/Manual_de_Instalacion_SQL.pdf"
   },
   {
     num: 2,
@@ -40,7 +45,8 @@ const weeks = [
         <li>Cardinalidades 1:1, 1:N y M:N.</li>
         <li>Uso de draw.io para diagramas profesionales.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 3,
@@ -56,7 +62,8 @@ const weeks = [
         <li>Restricciones: NOT NULL, UNIQUE, CHECK, DEFAULT.</li>
         <li>Integridad referencial y acciones ON DELETE.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 4,
@@ -72,7 +79,8 @@ const weeks = [
         <li>DROP TABLE con IF EXISTS para seguridad.</li>
         <li>Documentación del esquema con comentarios SQL.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 5,
@@ -88,7 +96,8 @@ const weeks = [
         <li>DELETE con confirmación de registros afectados.</li>
         <li>Transacciones: BEGIN, COMMIT, ROLLBACK.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 6,
@@ -104,7 +113,8 @@ const weeks = [
         <li>Ordenamiento multi-columna ASC / DESC.</li>
         <li>Subconsultas escalares en el WHERE.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 7,
@@ -120,7 +130,8 @@ const weeks = [
         <li>Subconsultas con EXISTS y NOT EXISTS.</li>
         <li>Uso de EXPLAIN para optimizar consultas lentas.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 8,
@@ -136,7 +147,8 @@ const weeks = [
         <li>Antes / después del esquema del proyecto.</li>
         <li>Verificación con herramientas de diagrama ER.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 9,
@@ -152,7 +164,8 @@ const weeks = [
         <li>Procedimientos almacenados con parámetros IN / OUT.</li>
         <li>Ventajas de encapsular lógica en el servidor.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 10,
@@ -168,7 +181,8 @@ const weeks = [
         <li>Caso práctico: auditoría automática de cambios.</li>
         <li>Pruebas de triggers con escenarios reales.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 11,
@@ -184,7 +198,8 @@ const weeks = [
         <li>Simulación de deadlocks y estrategias de resolución.</li>
         <li>Ejercicios con sesiones concurrentes en MySQL.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 12,
@@ -200,7 +215,8 @@ const weeks = [
         <li>Roles predefinidos y personalizados.</li>
         <li>Principio de mínimo privilegio aplicado al proyecto.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 13,
@@ -216,7 +232,8 @@ const weeks = [
         <li>Configuración básica maestro-esclavo (replicación).</li>
         <li>Políticas de retención de respaldos.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 14,
@@ -232,7 +249,8 @@ const weeks = [
         <li>Comparativa práctica: SQL vs NoSQL por caso de uso.</li>
         <li>Modelado de documentos embebidos y referenciados.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 15,
@@ -248,7 +266,8 @@ const weeks = [
         <li>Consultas avanzadas con JOINs y subconsultas.</li>
         <li>Informe técnico en PDF con capturas de evidencia.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   },
   {
     num: 16,
@@ -264,7 +283,8 @@ const weeks = [
         <li>Claridad en la sustentación oral y defensa técnica.</li>
         <li>Documentación técnica completa y repositorio publicado.</li>
       </ul>`,
-    githubUrl: "https://github.com/dennis-cuadros"
+    githubUrl: "https://github.com/dennis-cuadros",
+    pdfUrl: null
   }
 ];
 
@@ -272,13 +292,11 @@ const weeks = [
    2. RENDER DE TARJETAS
 ============================================================ */
 
-/** Devuelve clase CSS y texto del estado */
 function statusLabel(s) {
   if (s === 'done') return { cls: 'status-done',    txt: '✓ Completado'    };
   return                   { cls: 'status-pending', txt: '○ Por completar' };
 }
 
-/** Genera las 16 tarjetas en el grid */
 function renderWeeks() {
   const grid = document.getElementById('weeks-grid');
   grid.innerHTML = '';
@@ -296,10 +314,7 @@ function renderWeeks() {
     card.style.animationDelay = delay;
 
     card.innerHTML = `
-      <!-- Número decorativo de fondo -->
       <span class="week-num-bg" aria-hidden="true">${String(w.num).padStart(2,'0')}</span>
-
-      <!-- Fila superior: símbolo </> y chip de semana -->
       <div class="card-top">
         <div class="card-code-icon" aria-hidden="true">&lt;/&gt;</div>
         <div class="week-chip">
@@ -311,21 +326,14 @@ function renderWeeks() {
           Semana ${w.num}
         </div>
       </div>
-
-      <!-- Contenido -->
       <h3 class="week-title">${w.title}</h3>
       <p  class="week-desc">${w.desc}</p>
-
-      <!-- Tecnologías -->
       <div class="week-tags">${tagsHTML}</div>
-
-      <!-- Estado -->
       <div class="week-status">
         <span class="status-dot ${st.cls}"></span>
         <span class="${st.cls}">${st.txt}</span>
       </div>`;
 
-    /* Abrir modal al hacer clic o presionar Enter/Espacio */
     card.addEventListener('click', () => openModal(w));
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(w); }
@@ -337,7 +345,6 @@ function renderWeeks() {
   lucide.createIcons();
 }
 
-/** Calcula y anima la barra de progreso */
 function animateProgress() {
   const done  = weeks.filter(w => w.status === 'done').length;
   const total = weeks.length;
@@ -346,17 +353,15 @@ function animateProgress() {
   document.getElementById('progress-count').textContent = `${done} / ${total} semanas completadas`;
   document.getElementById('progress-pct').textContent   = `${pct}%`;
 
-  /* Pequeño delay para que la transición CSS sea visible */
   setTimeout(() => {
     document.querySelector('.progress-fill').style.width = `${pct}%`;
   }, 250);
 }
 
 /* ============================================================
-   3. MODAL
+   3. MODAL  —  CORRECCIÓN DEL PDF
 ============================================================ */
 
-/** Abre el modal con los datos de la semana */
 function openModal(w) {
   const st = statusLabel(w.status);
 
@@ -365,38 +370,48 @@ function openModal(w) {
   document.getElementById('modal-body').innerHTML    = w.details;
   document.getElementById('modal-tags').innerHTML    =
     w.tags.map(t => `<span class="tag">${t}</span>`).join('');
-  document.getElementById('modal-github').href       = w.githubUrl;
 
-  /* Actualizar pastilla de estado */
+  // Botón GitHub
+  document.getElementById('modal-github').setAttribute('href', w.githubUrl);
+
+  // ─── BOTÓN PDF CORREGIDO ───────────────────────────────────
+  const pdfBtn = document.getElementById('modal-pdf');
+  if (w.pdfUrl && w.pdfUrl !== null) {
+    pdfBtn.setAttribute('href', w.pdfUrl);   // ← setAttribute en lugar de .href
+    pdfBtn.style.display = 'flex';
+  } else {
+    pdfBtn.setAttribute('href', '#');
+    pdfBtn.style.display = 'none';
+  }
+  // ──────────────────────────────────────────────────────────
+
+  // Pastilla de estado
   const statusEl = document.getElementById('modal-status');
   statusEl.className = `modal-status ${w.status}`;
   statusEl.innerHTML = w.status === 'done'
-    ? `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Completado`
-    : `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Por completar`;
+    ? `<i data-lucide="check-circle" style="width:13px;height:13px"></i> Completado`
+    : `<i data-lucide="clock" style="width:13px;height:13px"></i> Por completar`;
 
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
   lucide.createIcons();
 }
 
-/** Cierra el modal */
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
 
-/** Cierra el modal al hacer clic en el overlay (fuera del cuadro) */
 function closeModalOnBg(e) {
   if (e.target.id === 'modal-overlay') closeModal();
 }
 
-/* Cerrar modal con Escape */
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
 
 /* ============================================================
-   4. CANVAS ANIMADO  –  cuadrícula + partículas
+   4. CANVAS ANIMADO
 ============================================================ */
 function initCanvas() {
   const canvas = document.getElementById('bg-canvas');
@@ -426,14 +441,12 @@ function initCanvas() {
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
-    /* Cuadrícula */
     ctx.strokeStyle = 'rgba(0,212,255,0.024)';
     ctx.lineWidth   = 1;
     const step = 65;
     for (let x = 0; x < W; x += step) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
     for (let y = 0; y < H; y += step) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
 
-    /* Partículas */
     particles.forEach(p => {
       p.x += p.dx; p.y += p.dy;
       if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
@@ -444,7 +457,6 @@ function initCanvas() {
       ctx.fill();
     });
 
-    /* Conexiones */
     const MAX = 130;
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
